@@ -1,0 +1,11 @@
+
+
+type Wallet @model {
+  id: ID!
+  walletName: String!
+  keystoreJson:String
+  walletPassword:String
+  phrase:String
+  privateKey:String
+  
+}

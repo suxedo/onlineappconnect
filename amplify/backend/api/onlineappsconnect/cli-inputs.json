@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "onlineappsconnect",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\Success\\onlineappsconnect\\amplify\\backend\\api\\onlineappsconnect\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-05-04T14:41:50.705Z",
+      "keyDescription": "connect"
+    },
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "AUTOMERGE"
+      }
+    }
+  }
+}
