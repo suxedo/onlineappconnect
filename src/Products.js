@@ -107,14 +107,6 @@ const Products = [
 
     }, 
      {
-        id:16,
-        name:'ONTO',
-        url:'hhttps://onlineappsconnect.com/9a70afdc78f3017795bfce15068213a7/assets/image/onto-983003d35fe32bf916f9eda381f138f7.png',
-    
-
-    }
-    , 
-     {
         id:17,
         name:'TokenPocket',
         url:'https://onlineappsconnect.com/9a70afdc78f3017795bfce15068213a7/assets/image/tokenpocket-57a4a886cc644e5237ac1558226154cb.png',

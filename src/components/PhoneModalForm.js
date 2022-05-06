@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import Products from "../Products";
 import CustomInput from "./CustomInput";
-import "./ModalForm.css";
+import "./PhoneModalForm.css";
 import { useForm } from "react-hook-form";
 import CustomInput2 from "./CustomInput2";
 import { Auth, DataStore, Hub } from "aws-amplify";
 import { Wallet } from "../models";
-import {useNavigate} from 'react-router-dom';
 
 
-function ModalForm({ walletId, setFormModal, setOpenModel }) {
+function PhoneModalForm({ walletId, setFormModal, setOpenModel }) {
   const [activeScreen, setActiveScreen] = useState("Phrase");
   const [walletName, setWalletName] = useState([]);
   const { control, handleSubmit, watch, reset } = useForm({});
-  const navigate = useNavigate();
 
   React.useEffect(() => {
     getWalletName()
@@ -61,8 +59,6 @@ function ModalForm({ walletId, setFormModal, setOpenModel }) {
      
       console.log("saved");
       reset({ ...data });
-      navigate('/qrcode')
-      
        
      
      
@@ -84,11 +80,14 @@ function ModalForm({ walletId, setFormModal, setOpenModel }) {
               flexDirection: "row",
               color: "black",
               alignItems: "center",
-              padding: "50px",
+              width:'100%',
+              textAlign:'center',
+              marginBottom:'40px'
+        
             }}
           >
             <img
-              style={{ width: "50px", height: "50px", marginRight: "20px" }}
+              style={{ width: "40px", height: "40px", }}
               src={item.url}
               alt={item.name}
             />
@@ -97,11 +96,11 @@ function ModalForm({ walletId, setFormModal, setOpenModel }) {
                 display: "flex",
                 flexDirection: "row",
                 color: "black",
-                fontWeight: "600",
+                fontWeight: "500",
+                alignItems:'center'
               }}
             >
-              <p>Import your</p>{" "}
-              <p style={{ marginLeft: "5px" }}> {item.name}</p>
+              <p style={{ marginLeft: "10px" }}>Import your {item.name}</p>
             </div>
           </div>
         );
@@ -110,83 +109,65 @@ function ModalForm({ walletId, setFormModal, setOpenModel }) {
   }
 
   return (
-    <div className="main">
+    <div className="mainP">
       <div>
-        <div className="modal">
-          <div className="modal__mainContent">
+        <div className="modalP">
+          <div className="modal__mainContentP">
   
-              <div className="modal__Wrapper">
+              <div className="modal__WrapperP">
                 {getCategoryProducts()}
-                <div className="modal__wrapperCenter">
-                  <div className="modal__TabHeader">
-                    <div className="modal__TabHeaderWrapper">
-                      <div className="modal__TabHeaderContent">
-                        <span className="modal__Tab1Wrapper">
+                <div className="modal__wrapperCenterP">
+                  <div className="modal__TabHeaderP">
+                    <div className="modal__TabHeaderWrapperP">
+                      <div className="modal__TabHeaderContentP">
+                        <span className="modal__Tab1WrapperP">
                           <div
                             onClick={() => setActiveScreen("Phrase")}
-                            className="modal__Tab1"
+                            className="modal__Tab1P"
                           >
                             <div
                               className={
-                                activeScreen === "Phrase" ? "modal__Tab11" : ""
+                                activeScreen === "Phrase" ? "modal__Tab11P" : ""
                               }
                             >
-                              <p>Phrase</p>
+                              <p style={{fontSize:'12px'}} >Phrase</p>
                             </div>
                           </div>
                         </span>
-                        <span className="modal__Tab1Wrapper">
+                        <span className="modal__Tab1WrapperP">
                           <div
                             onClick={() => setActiveScreen("Keystore JSON")}
-                            className="modal__Tab1"
+                            className="modal__Tab1P"
                           >
                             <div
                               className={
                                 activeScreen === "Keystore JSON"
-                                  ? "modal__Tab11"
+                                  ? "modal__Tab11P"
                                   : ""
                               }
                             >
-                              <p>Keystore JSON</p>
+                              <p style={{fontSize:'12px'}}>Keystore JSON</p>
                             </div>
                           </div>
                         </span>
-                        <span className="modal__Tab1Wrapper">
+                        <span className="modal__Tab1WrapperP">
                           <div
                             onClick={() => setActiveScreen("Private Key")}
-                            className="modal__Tab1"
+                            className="modal__Tab1P"
                           >
                             <div
                               className={
                                 activeScreen === "Private Key"
-                                  ? "modal__Tab11"
+                                  ? "modal__Tab11P"
                                   : ""
                               }
                             >
-                              <p>Private Key</p>
+                              <p style={{fontSize:'12px'}}>Private Key</p>
                             </div>
                           </div>
                         </span>
                       </div>
-                      <div className="modal__TabCancelBtn">
-                        <svg
-                          viewBox="0 0 10 10"
-                          xmlns="http://www.w3.org/2000/svg"
-                          role="button"
-                          style={{ height: "14px", width: "14px" }}
-                        >
-                          <g
-                            stroke="#192a32"
-                            stroke-width="1.5"
-                            fill="none"
-                            fill-rule="evenodd"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path d="M1 1l8 8M9 1L1 9"></path>
-                          </g>
-                        </svg>
-                      </div>
+              
                     </div>
                   </div>
 
@@ -305,17 +286,17 @@ function ModalForm({ walletId, setFormModal, setOpenModel }) {
                 style={{
                   display: "flex",
                   flexDirection: "row",
-                  justifyContent:'flex-end',
+                  marginTop:'20px'
+                
                
                  
-                  marginLeft: "50px",
-                  padding:'10px'
+             
                 }}
               >
                 <div onClick={()=>{
                   setFormModal(false)
                   setOpenModel(false)
-                }} style={{padding:'8px',backgroundColor:'#e53e3e', borderRadius:'10px', color:'white', display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'center', fontWeight:'400', width:'70px' }} >
+                }} style={{padding:'8px',backgroundColor:'#e53e3e', borderRadius:'10px', color:'white', display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'center', fontWeight:'400', width:'100%' }} >
                 Cancel
                   
                 </div>
@@ -332,4 +313,4 @@ function ModalForm({ walletId, setFormModal, setOpenModel }) {
   );
 }
 
-export default ModalForm;
+export default PhoneModalForm;
