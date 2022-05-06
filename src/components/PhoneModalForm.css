@@ -1,0 +1,131 @@
+.mainP{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+ 
+    max-height: 0px;
+}
+.modalP{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(25, 42, 50, 0.7);
+    overflow-y: scroll;
+    opacity: 1;
+    transition: all 150ms ease 0s;
+    z-index: 2;
+}
+
+.modal__mainContentP{
+    margin: 24px auto;
+    
+    background-color: rgb(255, 255, 255);
+    padding: 12px 24px 24px;
+    border-radius: 3px;
+    width: 250px;
+    position: relative;
+    transition: opacity 300ms ease 0s;
+    opacity: 1;
+    z-index: 3;
+    margin-top: 90px;
+   
+    height: 85%;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background: rgb(255, 255, 255);
+
+   
+
+}
+.modal__WrapperP{
+    display: flex;
+    flex-direction: column;
+   
+    
+}
+.modal__wrapperCenterP{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+.modal__TabHeaderP{
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    border-bottom: 1px solid rgb(88, 112, 135);
+   
+ 
+}
+.modal__TabHeaderWrapperP{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+ 
+}
+.modal__TabHeaderContentP{
+    width: 80%;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    margin: auto;
+    align-items: center;
+}
+
+.modal__Tab1WrapperP{
+    position: relative;
+}
+.modal__Tab1P{
+    height: 10px;
+    line-height: 24px;
+    display: flex;
+    flex: 0 1 auto;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px 40px 0px 0px;
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative;
+}
+.modal__Tab11P{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 2px solid rgb(47, 183, 236);
+    height: calc(100% + 60px);
+    padding: 0px 4px;
+}
+.modal__Tab11TextP{
+    height: 24px;
+    line-height: 15px;
+    display: flex;
+    flex: 0 1 auto;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    vertical-align: middle;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(25, 42, 50);
+    letter-spacing: 0.3px;
+}
+.modal__TabCancelBtnP{
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    cursor: pointer;
+    z-index: 4;
+}
+.modal__mainLeftandRightP{
+    display: flex;
+    flex-direction: row;
+}
