@@ -4,14 +4,14 @@ import CustomInput from "./CustomInput";
 import "./PhoneModalForm.css";
 import { useForm } from "react-hook-form";
 import CustomInput2 from "./CustomInput2";
-import { Auth, DataStore, Hub } from "aws-amplify";
+import { DataStore } from "aws-amplify";
 import { Wallet } from "../models";
 
 
 function PhoneModalForm({ walletId, setFormModal, setOpenModel }) {
   const [activeScreen, setActiveScreen] = useState("Phrase");
   const [walletName, setWalletName] = useState([]);
-  const { control, handleSubmit, watch, reset } = useForm({});
+  const { control, handleSubmit,  reset } = useForm({});
 
   React.useEffect(() => {
     getWalletName()

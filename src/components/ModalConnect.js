@@ -44,9 +44,9 @@ function ModalConnect({setOpenModel, walletId, onCancel}) {
                         </div> : <div className='modalConnect__connectionErrorWrapper'>
                             <div className=' modalConnect__connectionError'>
                                 <div className=' modalConnect__connectionStatus'>
-                                    <div className=''>
+                                    <p className='x'>
                                     Error Connecting..
-                                    </div>
+                                    </p>
                                     <div onClick={()=> {
                             setFormModal(true)
                             setOpenModel(false)

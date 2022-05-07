@@ -9,10 +9,7 @@ function HomePhone() {
     const [walletId, setWalletId] = useState([]);
 
    
-    const onPress = (e) => {
-        setOpenModel(true);
-        console.log(e);
-      };
+  
   return (
     <div className='homeP'>
         <div className='home__wrapperP'>

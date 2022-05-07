@@ -42,7 +42,7 @@
     margin: 0;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -60%);
+    transform: translate(-50%, -50%);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -91,6 +91,7 @@
     padding-bottom: 2rem;
     padding-left: 2rem;
     width:380px;
+    height: 280px;
   
   
    
@@ -265,4 +266,217 @@
     justify-content: center;
     flex-direction: column;
     flex-wrap: nowrap;
+}
+@media only screen and (max-width: 600px) {
+    .main{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 11;
+        max-height: 0px;
+        z-index: 2;
+        overflow: hidden;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.424);
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+    .modalConfirm{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: rgba(25, 42, 50, 0.7);
+        overflow-y: scroll;
+        opacity: 1;
+        transition: all 150ms ease 0s;
+        
+        
+      
+    }
+    .modalConfirm__mainContent{
+        margin: 24px auto;
+        background-color: #f2f2f2f0;
+        padding: 12px 24px 24px;
+        border-radius: 3px;
+        width: 250px;
+        position: relative;
+        transition: opacity 300ms ease 0s;
+        opacity: 1;
+        z-index: 1;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        
+       
+    
+    }
+    .modalConfirm__Wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .ss{
+        display: flex;
+        flex-flow: row nowrap;
+        padding: 1rem;
+        font-weight: 500;
+        color: rgb(33, 114, 229);
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding-top: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        
+        width: 100%;
+    }
+    .modal__TabCancelBtn{
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        cursor: pointer;
+        z-index: 4;
+    }
+    .modalConnect__main{
+        background-color: white;
+        padding: 2rem;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+     
+        width:230px;
+        height: fit-content;
+        
+
+        
+      
+      
+       
+        
+    }
+    .modalConnect__content{
+        display: flex;
+        flex-flow: column nowrap;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .modalConnect__connectionErrorWrapper{
+        flex: 1;
+        display: flex;
+     
+        align-items: center;
+       
+       
+        border-radius: 12px;
+        margin-bottom: 20px;
+    
+        
+        color: rgb(253, 64, 64);
+        border: 1px solid rgb(253, 64, 64);
+        flex-direction: row;
+        height: 30px;
+        justify-content: flex-start;
+        width: 100%;
+      
+  
+    
+    }
+    .modalConnect__connectionStatus{
+        justify-content: flex-start;
+        display: flex;
+        flex: 1;
+    }
+    .modalConnect__connectionError{
+     
+       
+     
+    }
+    .modalConnect__connectionBtn{
+        border-radius: 8px;
+        font-size: 12px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(86, 90, 105);
+        
+        padding: 0.5rem;
+        font-weight: 600;
+        height: 30px;
+    
+        
+    }
+    .modalConnect__connectionStatus{
+      
+    }
+    .modalConnect__walletNamesWrapper{
+        background-color: white;
+     
+        border: 1px solid rgb(64, 68, 79);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: row;
+        
+        
+      
+   
+        margin-top: 0px;
+   
+       
+    }
+    .modalConnect__walletNames{
+        display: flex;
+        flex-flow: column nowrap;
+        -webkit-box-pack: center;
+        justify-content: center;
+        height: 100%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    
+    }
+    .modalConnect__walletTitle{
+        display: flex;
+        flex-flow: row nowrap;
+        color: rgb(86 77 77);
+        font-size: 1rem;
+        font-weight: 500;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    
+    }
+    .modalConnect__description{
+        color: rgb(86 77 77);
+        margin-top: 10px;
+        font-size: 12px;
+    }
+    .modalConnect__walletImageWrapper{
+        display: flex;
+        flex-flow: column nowrap;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .x{
+        font-size: 12px;
+        
+    }
+
 }

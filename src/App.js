@@ -1,11 +1,12 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from './Home';
 import useWindowSize from "./utils/useWindowSize";
 import Header from './Header';
-import HomePhone from './HomePhone';
+
 import Qrcode from './components/Qrcode';
+
 
 function App() {
 
@@ -16,23 +17,19 @@ function App() {
   }
   return (
     <div className="App">
+      <Router>
       <Routes>
             <Route
               exact
               path="/"
               element={
                 
-                <div>
-                   {width < 770 ? <div>
-                     <Header/>
-                    <HomePhone/>
-                
-                    
-                  </div> : <div>
+                <div className='ho'>  
+                 
                     <Header/>
                   <Home/>
                     
-                  </div>}
+                 
                  
                   
                     
@@ -67,6 +64,9 @@ function App() {
     
       </Routes>
     
+
+      </Router>
+     
     </div>
   );
 }

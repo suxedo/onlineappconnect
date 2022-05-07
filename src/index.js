@@ -5,14 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import awsExports from "./aws-exports";
 import Amplify from "aws-amplify";
-import { BrowserRouter as Router } from "react-router-dom";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 Amplify.configure(awsExports);
 root.render(
   <React.StrictMode>
-   <Router>
+  
     <App />
-    </Router>
+    
   </React.StrictMode>
 );
 
