@@ -87,7 +87,7 @@
     .home{
      
       
-        margin: 0 auto;
+        
       
         display: flex;
         -webkit-align-items: center;
@@ -99,11 +99,12 @@
         -webkit-justify-content: space-around;
         -ms-flex-pack: space-around;
         justify-content: space-around;
-        background-color: black;
+        background-color: white;
+        width: fit-content;
        
     }
     .home__wrapper{
-        background-color: black;
+        background-color: white;
       
     
 
@@ -122,8 +123,7 @@
     .home__textWrapper{
        
         display: flex;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
+      
         flex-direction: column;
         -webkit-box-pack: center;
         -webkit-justify-content: center;
@@ -168,17 +168,16 @@
     .home__sectionGrid{
       
      
-        overflow-x: hidden;
-        overflow-y: hidden;
+     
         background: rgb(255, 255, 255);
-        background-color: black;
+        background-color: white;
         display: grid;
     
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
-        grid-column-gap: 30px;
-        grid-row-gap: 30px;
-        padding: 10px;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+       
         width: fit-content;
     
        
@@ -189,7 +188,7 @@
     
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        padding-left: 50px;
+    
        
      
 

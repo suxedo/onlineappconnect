@@ -378,6 +378,22 @@
         flex-direction: column;
         flex-wrap: nowrap;
     }
+    .modalConnect__walletNamesWrapperA{
+        background-color: white;
+     
+        color: rgb(253, 64, 64);
+        border: 1px solid rgb(253, 64, 64);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: row;
+        
+        
+      
+   
+        margin-top: 0px;
+   
+       
+    }
     .modalConnect__connectionErrorWrapper{
         flex: 1;
         display: flex;
